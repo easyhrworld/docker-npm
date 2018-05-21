@@ -1,4 +1,4 @@
-From npm:10.1
+From node:10.1
 LABEL "MAINTAINER" "Kanhai Chhugani"
 LABEL "COMPANY" "EasyHR"
 
