@@ -8,4 +8,6 @@ RUN echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' > /etc/apt/sou
     && wget -q -O /usr/bin/xvfb-chrome https://bitbucket.org/atlassian/docker-node-chrome-firefox/raw/ff180e2f16ea8639d4ca4a3abb0017ee23c2836c/scripts/xvfb-chrome \
     && ln -sf /usr/bin/xvfb-chrome /usr/bin/google-chrome \
     && chmod 755 /usr/bin/google-chrome \
-    && npm install -g @angular/cli
+    && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $buildDeps \
+    && rm -rf /var/lib/apt/lists/* \
+    && npm install -g @angular/cli 
